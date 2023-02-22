@@ -19,6 +19,13 @@ body {
 
 button {
     margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 90px;
+    border: solid rgb(114, 114, 114) 1px;
+    box-shadow: 0px 0px 5px black;
+    background-color: #fffb00c2;
+    font-weight: 400;
 }
 
 .icon {
@@ -36,7 +43,7 @@ button {
     display: grid;
     height: 95vh;
     width: 95vw;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
     grid-template-rows: 1fr 4fr;
     grid-template-areas:
     "sidemenu header header"
@@ -87,6 +94,11 @@ button {
 .search {
     grid-area: search;
     display: flex;
+
+}
+
+.search .icon {
+    margin-left: 50px;
 }
 
 #searchbar {
@@ -94,6 +106,7 @@ button {
     border-radius: 10px;
     /* flex-grow: 1; */
     min-width: 70%;
+    margin-left: 0;
 }
 
 .account {
@@ -184,6 +197,8 @@ button {
 .tile {
     min-width: 200px;
     min-height: 200px;
+    /* max-width: 300px; */
+    /* max-height: 300px; */
     /* border: solid 1px rgb(76, 0, 255); */
     text-align: center;
     padding: 10px 5px 10px 5px;
@@ -200,8 +215,14 @@ button {
     /* border-left: solid 1px rgb(56, 56, 56); */
     border-radius: 0;
     padding: 20px;
-    background-color: #dfdfdf5b;
-    
+    background-color: #dfdfdf5b;    
+}
+
+.feed > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .feed > * > ul {
@@ -209,23 +230,26 @@ button {
     flex-direction: column;
     flex-grow: 1;
     padding: 15px;
-    
+    max-width: 300px;
+
 }
 
 .feed > * > h3 {
     text-align: center;
-    margin: 15px;
+    /* margin: 15px; */
 }
 
 .feed > * > ul > li {
     margin: 5px;
     background-color: white;
 
+
 }
 
 .feed-one > ul > li {
     min-width: 100px;
     min-height: 50px;
+    
     /* border: solid 1px rgb(76, 0, 255); */
     text-align: center;
     padding: 10px 5px 10px 5px;
@@ -233,7 +257,7 @@ button {
 }
 
 .feed-two > ul > li {
-    min-width: 100px;
+    min-width: 200px;
     min-height: 25px;
     /* border: solid 1px rgb(76, 0, 255); */
     text-align: center;
