@@ -1,32 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
 * {
     /* border: solid 1px black; */
     /* padding: 10px; */
     list-style: none;
+    margin: 0;
+    border-radius: 10px;
 }
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 button {
     margin: 10px;
 }
 
-.truncate {
+.icon {
+    width: 24px;
+}
+
+/* .truncate {
     width: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+  } */
 
 .page {
     display: grid;
     height: 95vh;
     width: 95vw;
-    grid-template-columns: 2fr 6fr 2fr;
-    grid-template-rows: 2fr 9fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr;
     grid-template-areas:
     "sidemenu header header"
     "sidemenu analytics feed"
@@ -37,7 +48,9 @@ button {
 
 .header {
     grid-area: header;
-    border: solid 1px red;
+    /* border: solid 1px red; */
+    box-shadow: 0px 0px 5px black;
+    border-radius: 0;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -47,15 +60,19 @@ button {
       
 }
 
+.avatar {
+    width: 50px;
+}
+
 .header > * {
     align-items: center;
     /* justify-content: center; */
-    border: solid 1px green;
+    /* border: solid 1px green; */
 }
 
 .header > * > * {
     align-items: center;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     margin: 15px;
 }
 
@@ -75,7 +92,8 @@ button {
 #searchbar {
     border: solid grey 2px;
     border-radius: 10px;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    min-width: 70%;
 }
 
 .account {
@@ -101,48 +119,123 @@ button {
 
 .sidebar {
     grid-area: sidemenu;
-    border: solid 1px red;
+    /* border: solid 1px grey; */
+    /* box-shadow: 1px 0px 10px 2px rgb(114, 114, 114); */
+    border-radius: 0;
+    min-width: 200px;
+    background-color: #fffb00c2;
 
 }
+
+.sidebar > * > ul {
+    padding: 10px;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    background-color: black;
+    max-width: 30%;
+
+}
+
+.tab {
+    display: flex;
+}
+
+.tab > * {
+    padding: 5px;
+}
+
+
 
 /* Analytics */
 
 .analytics {
     grid-area: analytics;
-    border: solid 1px red;
+    /* box-shadow: inset; */
+    border-radius: 0;
+    /* border: solid 1px red; */
+    padding: 20px;
+    background-color: #dfdfdf5b;
+}
+
+.title {
+    padding: 15px;
 }
 
 .tiles {
+    resize: both;
+    overflow: auto;
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 4px;
+    padding: 4px;
+    /* grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr; */
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
+    
 }
 
 .tile {
-    height: 50px;
-    width: 50px;
+    min-width: 200px;
+    min-height: 200px;
+    /* border: solid 1px rgb(76, 0, 255); */
+    text-align: center;
+    padding: 10px 5px 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 }
 
 /* Feed */
 
 .feed {
     grid-area: feed;
-    border: solid 1px red;
+    /* border-left: solid 1px rgb(56, 56, 56); */
+    border-radius: 0;
+    padding: 20px;
+    background-color: #dfdfdf5b;
+    
+}
+
+.feed > * > ul {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+    
+}
+
+.feed > * > h3 {
+    text-align: center;
+    margin: 15px;
+}
+
+.feed > * > ul > li {
+    margin: 5px;
+    background-color: white;
 
 }
 
 .feed-one > ul > li {
-    width: 200px;
-    height: 100px;
-    border: solid 1px rgb(76, 0, 255);
+    min-width: 100px;
+    min-height: 50px;
+    /* border: solid 1px rgb(76, 0, 255); */
     text-align: center;
     padding: 10px 5px 10px 5px;
+    flex-grow: 2;
 }
 
 .feed-two > ul > li {
-    width: 200px;
-    height: 50px;
-    border: solid 1px rgb(76, 0, 255);
+    min-width: 100px;
+    min-height: 25px;
+    /* border: solid 1px rgb(76, 0, 255); */
     text-align: center;
     padding: 10px 5px 10px 5px;
 }
